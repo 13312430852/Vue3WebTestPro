@@ -1,16 +1,17 @@
 <script setup>
 import { ref } from 'vue'
 
-defineProps({
-  msg: String
-})
+let count = ref(0)
+function addOne(){
+  count.value++
+}
 
-const count = ref(0)
 </script>
 
 <template>
   <div class="login">
-
+    <h1>{{ count }}</h1>
+    <button @click="addOne">Add one</button>
   </div>
 </template>
 
