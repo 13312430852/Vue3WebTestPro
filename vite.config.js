@@ -16,5 +16,13 @@ export default defineConfig({
   server: {
     host: HOST || '0.0.0.0',
     port: PORT || '8080'
+  },
+  css: {
+    preprocessorOptions: {
+      less: {
+        charset: true,
+        additionalData: '@import "./style/index.less";',
+      }
+    }
   }
 })
