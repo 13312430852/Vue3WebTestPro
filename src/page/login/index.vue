@@ -34,25 +34,53 @@ export default {
 </script>
 
 <template>
-  <div class="login">
-    <h1>{{ count }}</h1>
-    <button @click="addOne">Add one</button>
-    <div>
-      <ul>
-        <test v-for="(item) in tableList.list"
-              @del="del"
-              :key="item"
-              :text="item"></test>
-      </ul>
+    <div class="login" >
+      <div class="login-modal">
+        <div class="login-modal-header">
+          <span>xxx系统</span>
+        </div>
+      </div>
+      <div class="footer">
+        <span style="color: white;">xxxxx有线折磨人</span>
+      </div>
     </div>
-    <button @click="add">新增</button>
-  </div>
-
 </template>
 
 <style scoped>
+.login-modal-header {
+  height: 50px;
+  font-size: 20px;
+  line-height: 50px;
+  text-align: center;
+  border-bottom: 1px solid cornflowerblue;
+  border-top-left-radius: 19px;
+  border-top-right-radius: 19px;
+}
+.login-modal {
+  height: 350px;
+  width: 300px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 19px;
+  box-shadow:0 0 5px rgba(0,0,0,.5);
+  position: absolute;
+  right: 60px;
+  top: 100px;
+}
+
+.footer {
+  height: 70px;
+  width: 100%;
+  background-color: rgba(0,0,0,.5);
+  position: absolute;
+  bottom: 0px;
+  text-align: center;
+  line-height: 70px;
+}
 .login {
   height: 100vh;
+  width: 100%;
   background: url("../../../public/loginbg.jpg");
+  backdrop-filter: blur(9px);
+  /*filter: blur(9px);*/
 }
 </style>
