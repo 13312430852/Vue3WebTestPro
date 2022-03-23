@@ -1,7 +1,7 @@
 <script lang="ts">
 import { ref, reactive } from 'vue'
+import axios from 'axios'
 import test from '@/page/test.vue'
-import axios from "axios";
 
 export default {
   components: {
@@ -22,7 +22,10 @@ export default {
     }
 
     function getUser() {
-      axios.get('https://jsonplaceholder.typicode.com/users').then(res => {
+      // axios.get('https://jsonplaceholder.typicode.com/users').then(res => {
+      //   console.log('请求到了数据:', res)
+      // })
+      axios.post('login/getUserById', { name: '哈哈哈' }).then((res) => {
         console.log('请求到了数据:', res)
       })
     }
