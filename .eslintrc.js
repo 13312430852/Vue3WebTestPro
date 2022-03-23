@@ -17,5 +17,7 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
+    // 格式化不加分号
+    semi: ['warn', 'never'],
   },
 };

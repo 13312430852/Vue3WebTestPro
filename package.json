@@ -10,7 +10,10 @@
     "lint:create": "eslint --init"
   },
   "dependencies": {
+    "axios": "^0.26.1",
+    "mockjs": "^1.1.0",
     "vue": "^3.2.25",
+    "vue-axios": "^3.4.1",
     "vue-class-component": "^8.0.0-0",
     "vue-router": "4"
   },

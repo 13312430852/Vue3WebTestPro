@@ -1,22 +1,30 @@
 <script lang="ts">
-import { ref,reactive } from 'vue'
-import test from "@/page/test.vue";
+import { ref, reactive } from 'vue'
+import test from '@/page/test.vue'
+import axios from "axios";
+
 export default {
   components: {
-    test
+    test,
   },
   setup() {
-    let count = ref(0)
-    function addOne(){
+    const count = ref(0)
+    function addOne() {
       count.value++
     }
 
-    let tableList = reactive({list: ['111','222','333','44444']})
-    function add(){
+    const tableList = reactive({ list: ['111', '222', '333', '44444'] })
+    function add() {
       tableList.list.push(`${tableList.list.length}`.repeat(3))
     }
     function del(text: string):void {
-      tableList.list = tableList.list.filter(i => i !== text)
+      tableList.list = tableList.list.filter((i) => i !== text)
+    }
+
+    function getUser() {
+      axios.get('https://jsonplaceholder.typicode.com/users').then(res => {
+        console.log('请求到了数据:', res)
+      })
     }
 
     return {
@@ -25,10 +33,11 @@ export default {
 
       tableList,
       add,
-      del
+      del,
 
+      getUser,
     }
-  }
+  },
 }
 
 </script>
@@ -43,6 +52,7 @@ export default {
       <div class="footer">
         <span style="color: white;">xxxxx有线折磨人</span>
       </div>
+      <button @click="getUser">哈哈哈</button>
     </div>
 </template>
 

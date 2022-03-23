@@ -1,6 +1,7 @@
-function test(): void {
+function test(name:string): Object {
   const person: Object = {
-    name: 'yzq',
-  };
+    name,
+  }
+  return person
 }
-const mm = { name: 1 };
+const mm = test('yzq')
